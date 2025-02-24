@@ -33,6 +33,8 @@ import presentation.ui.main.cart.CartNav
 import presentation.ui.main.home.HomeNav
 import presentation.ui.main.profile.ProfileNav
 import presentation.ui.main.wishlist.WishlistNav
+import presentation.ui.main.map.MapNav
+
 
 @Composable
 fun MainNav(logout: () -> Unit) {
@@ -60,6 +62,9 @@ fun MainNav(logout: () -> Unit) {
                 }
                 composable(route = BottomNavigation.Profile.route) {
                     ProfileNav(logout = logout)
+                }
+                composable(route = "Map") {
+                    MapNav(onBackClick = { navBottomBarController.navigateUp() })
                 }
             }
         }
@@ -97,6 +102,7 @@ fun BottomNavigationUI(
                 BottomNavigation.Wishlist,
                 BottomNavigation.Cart,
                 BottomNavigation.Profile,
+                BottomNavigation.Map
             )
             items.forEach {
                 NavigationBarItem(label = { Text(text = it.title) },

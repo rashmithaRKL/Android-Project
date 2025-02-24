@@ -1,4 +1,7 @@
 [versions]
+maps-compose = "4.3.0"
+play-services-maps = "18.2.0"
+play-services-location = "21.1.0"
 android-compileSdk = "35"
 android-minSdk = "24"
 android-targetSdk = "35"
@@ -111,6 +114,11 @@ coil3-video = { module = "io.coil-kt.coil3:coil-video", version.ref = "coil3-io"
 coil3-svg = { module = "io.coil-kt.coil3:coil-svg", version.ref = "coil3-io" }
 coil3-gif = { module = "io.coil-kt.coil3:coil-gif", version.ref = "coil3-io" }
 coil3-core = { module = "io.coil-kt.coil3:coil-core", version.ref = "coil3-io" }
+
+# Maps dependencies
+maps-compose = { module = "com.google.maps.android:maps-compose", version.ref = "maps-compose" }
+play-services-maps = { module = "com.google.android.gms:play-services-maps", version.ref = "play-services-maps" }
+play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "play-services-location" }
 
 
 [bundles]
