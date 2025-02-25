@@ -1,4 +1,4 @@
-package com.razzaghi.shopingbykmp.android.map
+package com.rk.shopping.android.map
 
 import android.Manifest
 import androidx.compose.foundation.layout.Arrangement
