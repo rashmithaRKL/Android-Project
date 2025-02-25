@@ -1,7 +1,7 @@
 package presentation.ui.main.map
 
 import androidx.compose.runtime.Composable
-import com.razzaghi.shopingbykmp.android.map.MapScreen
+import presentation.ui.main.map.MapScreen
 
 @Composable
 fun MapNav(
