@@ -2,7 +2,7 @@ plugins {
     `kotlin-dsl`
 }
 
-group = "com.razzaghi.shopingbykmp.buildlogic"
+group = "com.rk.shopping.buildlogic"
 
 dependencies {
     compileOnly(libs.plugins.kotlin.serialization.toDep())
@@ -27,16 +27,16 @@ tasks {
 gradlePlugin {
     plugins {
         register("kotlinMultiplatform") {
-            id = "com.razzaghi.shopingbykmp.kotlinMultiplatform"
-            implementationClass = "KotlinMultiplatformConventionPlugin"
+            id = "com.rk.shopping.kotlinMultiplatform"
+            implementationClass = "com.rk.shopping.KotlinMultiplatformConventionPlugin"
         }
         register("shared") {
-            id = "com.razzaghi.shopingbykmp.shared"
-            implementationClass = "SharedConventionPlugin"
+            id = "com.rk.shopping.shared"
+            implementationClass = "com.rk.shopping.SharedConventionPlugin"
         }
         register("androidApp") {
-            id = "com.razzaghi.shopingbykmp.androidApp"
-            implementationClass = "AndroidAppConventionPlugin"
+            id = "com.rk.shopping.androidApp"
+            implementationClass = "com.rk.shopping.AndroidAppConventionPlugin"
         }
     }
 }

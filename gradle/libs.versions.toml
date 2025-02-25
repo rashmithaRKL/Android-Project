@@ -141,6 +141,6 @@ ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
 
 
 # Plugins defined by this project
-shopping-shared = { id = "com.razzaghi.shopingbykmp.shared", version = "unspecified" }
-shopping-kotlinMultiplatform = { id = "com.razzaghi.shopingbykmp.kotlinMultiplatform", version = "unspecified" }
-shopping-androidApp = { id = "com.razzaghi.shopingbykmp.androidApp", version = "unspecified" }
+shopping-shared = { id = "com.rk.shopping.shared", version = "unspecified" }
+shopping-kotlinMultiplatform = { id = "com.rk.shopping.kotlinMultiplatform", version = "unspecified" }
+shopping-androidApp = { id = "com.rk.shopping.androidApp", version = "unspecified" }
