@@ -11,6 +11,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.Button
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -131,8 +132,13 @@ actual fun MapScreen(onBackClick: () -> Unit) {
                         textAlign = TextAlign.Center
                     )
                     Spacer(modifier = Modifier.height(8.dp))
-                    Button(onClick = { locationPermissions.launchMultiplePermissionRequest() }) {
-                        Text("Grant Permission")
+                    Button(
+                        onClick = { locationPermissions.launchMultiplePermissionRequest() }
+                    ) {
+                        Text(
+                            text = "Grant Permission",
+                            style = MaterialTheme.typography.labelLarge
+                        )
                     }
                 }
             } else {
