@@ -25,6 +25,10 @@ kotlin {
                 implementation(libs.play.services.maps)
                 implementation(libs.play.services.location)
                 implementation(libs.accompanist.permissions)
+                implementation(libs.compose.material3)
+                implementation(libs.compose.ui)
+                implementation(libs.compose.ui.tooling)
+                implementation(libs.compose.foundation)
             }
         }
     }
