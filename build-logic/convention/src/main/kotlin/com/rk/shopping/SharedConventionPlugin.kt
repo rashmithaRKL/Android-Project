@@ -1,3 +1,4 @@
+// SharedConventionPlugin.kt
 package com.rk.shopping
 
 import org.gradle.api.Plugin
@@ -11,6 +12,8 @@ import com.android.build.api.dsl.LibraryExtension
 class SharedConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) = with(target) {
         with(pluginManager) {
+            apply("com.android.library")
+            apply("org.jetbrains.kotlin.multiplatform")
             apply(libs.findPlugin("composeMultiplatform").get().get().pluginId)
             apply(libs.findPlugin("compose.compiler").get().get().pluginId)
         }
@@ -20,13 +23,13 @@ class SharedConventionPlugin : Plugin<Project> {
         extensions.configure<LibraryExtension>(::configureKotlinAndroid)
 
         extensions.configure<KotlinMultiplatformExtension> {
+            androidTarget()
             sourceSets.apply {
                 commonTest {
                     dependencies {
                         implementation(kotlin("test"))
                         implementation(kotlin("test-common"))
                         implementation(kotlin("test-annotations-common"))
-
                         implementation(libs.findLibrary("kotest.framework.engine").get())
                         implementation(libs.findLibrary("kotest.assertions.core").get())
                         implementation(libs.findLibrary("kotest.property").get())
@@ -34,7 +37,6 @@ class SharedConventionPlugin : Plugin<Project> {
                         implementation(libs.findLibrary("coroutines.test").get())
                         implementation(libs.findLibrary("turbine.turbine").get())
                         implementation(libs.findLibrary("mockk.io").get())
-
                         @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                         implementation(composeDeps.uiTest)
                     }
@@ -59,9 +61,7 @@ class SharedConventionPlugin : Plugin<Project> {
                         implementation(libs.findLibrary("kotlinx.coroutines.core").get())
                         implementation(libs.findLibrary("androidx.datastore.preferences").get())
                         implementation(libs.findLibrary("compose.navigation").get())
-                        implementation(
-                            libs.findLibrary("androidx.lifecycle.viewmodel.compose").get()
-                        )
+                        implementation(libs.findLibrary("androidx.lifecycle.viewmodel.compose").get())
                         api(libs.findLibrary("koin.core").get())
                         api(libs.findLibrary("koin.compose").get())
                         api(libs.findLibrary("coil3").get())
@@ -96,3 +96,4 @@ class SharedConventionPlugin : Plugin<Project> {
         }
     }
 }
+
